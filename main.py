@@ -1,5 +1,6 @@
 from flask import Flask     #, escape
 # from markupsafe import escape
+from db import *
 
 app = Flask(__name__)
 
@@ -13,7 +14,13 @@ def post_register():
 
 @app.get("/user")
 def get_user():
-    return f'get user'
+    con = sqlite3.connect('database.db')
+    cur = con.cursor()
+    cur.execute('select login, phone, birth_date from users')
+    res = cur.fetchone()
+    user_phone = res[1]
+    birth_date = res[2]
+    return {"phone"}
 
 @app.post("/user")
 def post_user():
