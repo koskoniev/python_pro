@@ -3,7 +3,7 @@
 /user/funds [get, post]
 /user/reservations [get, post]
 /user/reservations/<reservation_id> [get, put, delete]
-/user/orders [get, post, put]
+/user/checkout [get, post, put]
 /fitness_center [get]
 /fitness_center/<gym_id> [get]
 /fitness_center/<gym_id>/trainer [get]
